@@ -2,6 +2,6 @@
 
 Simple code challenge for myself
 
-Input: JSON string with "keys" and "values" items
+Input: JSON string with "keys" and "values" in separate arrays
 
-Output: key-value pairs printed to console
+Output: "key: value" for each value array printed to console
