@@ -3,9 +3,14 @@ package com.company;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class Main {
 
+    static final int KEYS_LENGTH = 6;
+
     public static void main(String[] args) {
+
         final String boardGames = """
                 {
                     "keys": [
@@ -26,8 +31,17 @@ public class Main {
 
         JSONObject jsonObject = new JSONObject(boardGames);
         JSONArray keys = jsonObject.getJSONArray("keys");
+        JSONArray values = jsonObject.getJSONArray("values");
 
-        
+        for (int i = 0; i < values.length(); i++) {
+
+            JSONArray currentGame = (JSONArray) values.get(i);
+
+            for (int j = 0; j < KEYS_LENGTH; j++) {
+                System.out.printf("%s: %s%n", keys.get(j), currentGame.get(j));
+            }
+            System.out.printf("%n");
+        }
 
     }
 }
